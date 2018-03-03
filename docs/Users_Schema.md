@@ -11,4 +11,5 @@
 |**{user}/admin**|type|number|✔︎||Type of authentication: (0) Anonymous, (1) Email, (2) Google.|
 ||is_admin|boolean|✔︎|✔︎|True/False value for whether or not this user is an admin.|
 ||created|string|✔︎||Date string containing the date the user was created.|
+||author_uid|string|✔︎||The uid of the user who created this user.|
 ||license|number|✔︎|✔︎|Type of license: (0) Unverified, (1) Verified|

@@ -8,9 +8,8 @@ import {
 import Navigation from './Navigation/Navigation';
 
 /* import pages */
-import LandingPage from '../pages/Landing';
-import LoginPage from '../pages/Login';
 import HomePage from '../pages/Home';
+import LoginPage from '../pages/Login';
 import AccountPage from '../pages/Account';
 
 /* import routes */
@@ -30,18 +29,13 @@ class App extends Component {
       <Navigation />
 
       <hr/>
-
       <Route
-        exact path={routes.LANDING}
-        component={() => <LandingPage />}
+        exact path={routes.HOME}
+        component={() => <HomePage />}
       />
       <Route
         exact path={routes.LOGIN}
         component={() => <LoginPage />}
-      />
-      <Route
-        exact path={routes.HOME}
-        component={() => <HomePage />}
       />
       <Route
         exact path={routes.ACCOUNT}
@@ -50,7 +44,7 @@ class App extends Component {
     </div>
   </Router>
 
-      
+
       </div>
     );
   }

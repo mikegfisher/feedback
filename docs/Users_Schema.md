@@ -8,6 +8,8 @@
 ||last_name|string|||The last name of the user.|
 ||first_name|string|||The first name of the user.|
 ||photo_url|string|||The URL location for the user's avatar photo.|
+||author_uid|string|✔︎||The uid of the user who created this user.|
+||created|string|✔︎||Date string containing the date the user was created.|
 |**{user}/admin**|type|number|✔︎||Type of authentication: (0) Anonymous, (1) Email, (2) Google.|
 ||is_admin|boolean|✔︎|✔︎|True/False value for whether or not this user is an admin.|
 ||created|string|✔︎||Date string containing the date the user was created.|

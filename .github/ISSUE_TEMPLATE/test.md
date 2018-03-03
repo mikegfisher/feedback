@@ -13,4 +13,4 @@ Describe the action and expected behavior of the feature the test will reproduce
 ## 
 #### Related issue(s)
 - #1 Link to issue in this repo. 
-- user/repo#1 Link to issue in another repo. 
+- user/repo#1 Link to issue in _another_ repo. 

@@ -9,3 +9,8 @@ Describe the difference between what _actually_ happened vs. what you expected t
 1. First, do this.
 2. Then, do this.
 3. Finally, observe the problem.
+
+## 
+#### Related issue(s)
+- #1 Link to issue in this repo.
+- user/repo#1 Link to issue in _another_ repo.

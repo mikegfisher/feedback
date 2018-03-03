@@ -19,3 +19,35 @@
 ||created|string|Date string containing the date this admin data was created.|
 ||editor_uid|string|The uid of the user who last modified this admin data.|
 ||modified|string|Date string containing the date the admin data was last modified.|
+
+## Rules
+```javascript
+    // users collection
+    match /users/{user} {
+      // read rules - allow read if the user if authenticated
+      allow get, list: if request.auth.uid != null;
+      
+      // write rules 
+      allow create: if request.auth.uid == request.path[6] 
+        && request.resource.data.author_uid == request.auth.uid
+        && request.resource.data.keys().hasAll(['created']);
+      allow update: if request.auth.uid == request.path[6] 
+        && request.resource.data.editor_uid == request.auth.uid
+        && request.resource.data.keys().hasAll(['modified']);
+      allow delete: if request.auth.uid == request.path[6];
+      
+      // admin subcollection
+      match /admin/{admin} {
+        // read rules
+        allow get, list: if request.auth.uid == request.path[6] 
+          || get(/databases/$(database)/documents/users/$(request.auth.uid)/admin/$(admin)).data.is_admin == true;
+        
+        //write rules
+        allow create: if request.auth.uid == request.path[6] 
+          && request.resource.data.is_admin == false
+          && request.resource.data.license == 0
+          || get(/databases/$(database)/documents/users/$(request.auth.uid)/admin/$(admin)).data.is_admin == true;
+        allow update: if get(/databases/$(database)/documents/users/$(request.auth.uid)/admin/$(admin)).data.is_admin == true;
+        allow delete: if request.auth.uid == request.path[6];
+      }
+```

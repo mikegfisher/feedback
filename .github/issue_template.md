@@ -11,4 +11,3 @@ _(NOTE: Switch to **Preview** if you're still in **Edit**.)_
 |[Task](https://github.com/mikegfisher/feedback/issues/new?template=task.md&labels=task)|Identify work required to complete an issue.|[`task`](https://github.com/mikegfisher/feedback/labels/task)|
 |[Test](https://github.com/mikegfisher/feedback/issues/new?template=test.md&labels=test)|Define a test for a feature.|[`test`](https://github.com/mikegfisher/feedback/labels/test)|
 |[Sunset](https://github.com/mikegfisher/feedback/issues/new?template=sunset.md&labels=sunset)|Deprecate a feature.|[`sunset`](https://github.com/mikegfisher/feedback/labels/sunset)|
-|[Fire](https://github.com/mikegfisher/feedback/issues/new?template=fire.md&labels=🔥fire)|For emergency use only!|[`🔥fire`](https://github.com/mikegfisher/feedback/labels/🔥fire)|

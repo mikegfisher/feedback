@@ -10,8 +10,12 @@
 ||photo_url|string|||The URL location for the user's avatar photo.|
 ||author_uid|string|✔︎||The uid of the user who created this user.|
 ||created|string|✔︎||Date string containing the date the user was created.|
+||editor_uid|string|✔︎||The uid of the user who last modified this user.|
+||modified|string|✔︎||Date string containing the date the user data was last modified.|
 |**{user}/admin**|type|number|✔︎||Type of authentication: (0) Anonymous, (1) Email, (2) Google.|
-||is_admin|boolean|✔︎|✔︎|True/False value for whether or not this user is an admin.|
-||created|string|✔︎||Date string containing the date the user was created.|
-||author_uid|string|✔︎||The uid of the user who created this user.|
 ||license|number|✔︎|✔︎|Type of license: (0) Unverified, (1) Verified|
+||is_admin|boolean|✔︎|✔︎|True/False value for whether or not this user is an admin.|
+||author_uid|string|✔︎||The uid of the user who created this admin data.|
+||created|string|✔︎||Date string containing the date this admin data was created.|
+||editor_uid|string|✔︎||The uid of the user who last modified this user.|
+||modified|string|✔︎||Date string containing the date the user data was last modified.|

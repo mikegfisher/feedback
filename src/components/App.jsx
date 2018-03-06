@@ -6,6 +6,7 @@ import {
 
 /* import components */
 import Navigation from './Navigation/Navigation';
+import Auth from './Auth/Auth';
 
 /* import pages */
 import HomePage from '../pages/Home';
@@ -26,6 +27,7 @@ class App extends Component {
       <div>
       <Router>
     <div>
+      <Auth />
       <Navigation />
 
       <hr/>
@@ -43,8 +45,6 @@ class App extends Component {
       />
     </div>
   </Router>
-
-
       </div>
     );
   }

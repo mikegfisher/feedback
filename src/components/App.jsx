@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
+import fire, { db } from '../fire';
 
 /* import components */
 import Navigation from './Navigation/Navigation';
-import Auth from './Auth/Auth';
 
 /* import pages */
 import HomePage from '../pages/Home';
@@ -20,28 +20,44 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: {}
     }
+  }
+  componentWillMount() {
+    // check to see if the current user is logged in
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // user is signed in, update the state
+        this.setState({
+          user: user
+        });
+      } else {
+        // user is NOT signed in, update the state
+        this.setState({
+          user: {}
+        });
+      }
+    });
   }
   render() {
     return (
       <div>
       <Router>
     <div>
-      <Auth />
-      <Navigation />
+      <Navigation user={this.state.user} />
 
       <hr/>
       <Route
         exact path={routes.HOME}
-        component={() => <HomePage />}
+        component={() => <HomePage user={this.state.user} />}
       />
       <Route
         exact path={routes.LOGIN}
-        component={() => <LoginPage />}
+        component={() => <LoginPage user={this.state.user} />}
       />
       <Route
         exact path={routes.ACCOUNT}
-        component={() => <AccountPage />}
+        component={() => <AccountPage user={this.state.user} />}
       />
     </div>
   </Router>

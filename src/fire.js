@@ -1,11 +1,15 @@
 import firebase from 'firebase'
-var config = {
-    apiKey: "AIzaSyCDD_a-q0BYHG0l6sXTWYXB_jFXyuaZsG8",
-    authDomain: "react-and-firebase-86540.firebaseapp.com",
-    databaseURL: "https://react-and-firebase-86540.firebaseio.com",
-    projectId: "react-and-firebase-86540",
-    storageBucket: "react-and-firebase-86540.appspot.com",
-    messagingSenderId: "145249821913"
-  };
-var fire = firebase.initializeApp(config);
+import 'firebase/firestore'
+
+const config = {
+  apiKey: "AIzaSyBdX3_bO8hIGJyHyJywLsPzCnfR4r0Aebs",
+  authDomain: "feedback-744d5.firebaseapp.com",
+  databaseURL: "https://feedback-744d5.firebaseio.com",
+  projectId: "feedback-744d5",
+  storageBucket: "feedback-744d5.appspot.com",
+  messagingSenderId: "354080782478"
+};
+const fire = firebase.initializeApp(config);
+const db = fire.firestore();
 export default fire;
+export { db };
